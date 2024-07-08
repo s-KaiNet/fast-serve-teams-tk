@@ -14,6 +14,15 @@
             "dependsOrder": "sequence"
         },
         {
+          "label": "Start Teams App with fast serve",
+          "dependsOn": [
+            "Validate prerequisites",
+            "Provision",
+            "fast serve"
+          ],
+          "dependsOrder": "sequence"
+        },
+        {
             // Check all required prerequisites.
             // See https://aka.ms/teamsfx-tasks/check-prerequisites to know the details and how to customize the args.
             "label": "Validate prerequisites",
@@ -94,6 +103,35 @@
                 "cwd": "${workspaceFolder}/src"
             },
             "dependsOn": "gulp trust-dev-cert"
+        },
+        {
+          "label": "fast serve",
+          "type": "shell",
+          "command": "npx",
+          "args": [
+            "fast-serve"
+          ],
+          "problemMatcher": [
+            {
+              "pattern": [
+                {
+                  "regexp": ".",
+                  "file": 1,
+                  "location": 2,
+                  "message": 3
+                }
+              ],
+              "background": {
+                "activeOnStart": true,
+                "beginsPattern": "^.*Starting gulp.*",
+                "endsPattern": "^.*Compiled successfully|webpack compiled.*"
+              }
+            }
+          ],
+          "isBackground": true,
+          "options": {
+            "cwd": "${workspaceFolder}/src"
+          }
         },
         {
             "label": "Terminate All Tasks",

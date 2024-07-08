@@ -194,6 +194,30 @@
             "stopAll": true
         },
         {
+          "name": "Teams workbench (Edge) with fast serve",
+          "configurations": [
+              "Start Teams workbench (Edge)"
+          ],
+          "preLaunchTask": "Start Teams App with fast serve",
+          "presentation": {
+              "group": "forteams",
+              "order": 3
+          },
+          "stopAll": true
+        },
+        {
+          "name": "Teams workbench (Chrome) with fast serve",
+          "configurations": [
+              "Start Teams workbench (Chrome)"
+          ],
+          "preLaunchTask": "Start Teams App with fast serve",
+          "presentation": {
+              "group": "forteams",
+              "order": 4
+          },
+          "stopAll": true
+      },
+        {
             "name": "Outlook workbench (Edge)",
             "configurations": [
                 "Attach to Frontend in Outlook (Edge)"
